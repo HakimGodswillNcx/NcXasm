@@ -12,7 +12,7 @@ python Linux proc ASM (CrossPlatform) Shell Code...
 |..........<b>↬</b> HTML-Editor.html
 |..........<b>↳</b> firefox-bookmark.html
 l--->handCraft:
-|............<b>↬</b> python:
+|.............<b>↬</b> python:
 |.....................<b>↬</b> ncxRegView.py // CPUregVIEWER
 l.....................<b>↳</b> ncxGameTrainer.py //GUI game trainer (qtpy)
 </pre>
