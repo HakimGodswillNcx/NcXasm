@@ -5,7 +5,8 @@ python Linux proc ASM (CrossPlatform) Shell Code...
 info: <br>|<pre>
 |---> LiBRAries -> python -> import -> psutil-AND-pydbg.html //install &example
 |---> ShellHome -> TerminalHintz.html //programs &CMD 
-l---> TOOLs -> ONLiNE AiChat-list.html
+l---> TOOLs:
+.........|---> ONLiNE AiChat-list.html
 .........|---> AsmDisAsm.html
 .........|---> HEXcalc.html
 .........|---> HTML-Editor.html
