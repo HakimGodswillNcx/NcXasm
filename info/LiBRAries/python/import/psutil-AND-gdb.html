@@ -82,8 +82,8 @@ def main():
             print("Error attaching to process:", e)
     else:
         all_process_names = get_all_process_names()
-        print("List of all process names:")
-        for name in all_process_names:
+        sorted_process_names = sorted(all_process_names)
+        for name in sorted_process_names:
             print(name)
         print(f"No process with the name '{proc_name}' found.")
 
