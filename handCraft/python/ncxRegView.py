@@ -45,14 +45,8 @@ def main():
     else:
         all_process_names = get_all_process_names()
         sorted_process_names = sorted(all_process_names)
-        output_file = 'sortProc/process_names.txt'
-        with open(output_file, 'w+') as file:
-            for name in sorted_process_names:
-                file.write(name + '\n')
-        file.close()
-        with open(output_file, 'r') as file:
-            print(file.read())
-        file.close()
+        for name in sorted_process_names:
+            print(name)
         print(f"No process with the name '{proc_name}' found.")
 
 if __name__ == "__main__":
