@@ -11,7 +11,10 @@ python Linux proc ASM (CrossPlatform) Shell Code...
 |..........<b>↬</b> HEXcalc.html
 |..........<b>↬</b> HTML-Editor.html
 |..........<b>↳</b> firefox-bookmark.html
-l--->handCraft -> -> python -> ncxRegView.py // CPUregVIEWER
+l--->handCraft:
+|............-> python:
+|..................<b>↬</b> ncxRegView.py // CPUregVIEWER
+l..................<b>↳</b> ncxGameTrainer.py //GUI game trainer (qtpy)
 </pre>
 <h1>
 →↑←↓↢↣↠↟↞↝↜↫↨↧↦↥↤↱↰↯↮↭↬↷↶↵↴↳↲↽↼↻↺↹↸⇂⇁⇀↿↾⇉⇈⇇⇆⇅⇄⇋⇊⇕⇔⇓⇒⇑⇐⇖⇗⇘⇙⇛⇚⇡⇠⇝⇜⇧⇦⇥⇤⇣⇢⇨⇩⇪➔➘➙➟➞➝➜➛➚➠➢➣➤➥➦➪➩➨➳➲➹➸➷➶➵➴↗↖↕↔↙↘⤴↩🔽⤵↪
