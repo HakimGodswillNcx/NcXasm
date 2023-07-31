@@ -7,11 +7,11 @@ python Linux proc ASM (CrossPlatform) Shell Code...
 |--->ShellHome -> TerminalHintz.html //programs listed &CMD
 <b>↳</b>--->TOOLs:
 |..........<b>↬</b> ONLiNE:
-|...............<b>↬</b> AiChat-list.html
-|..........<b>↬</b> AsmDisAsm.html
-|..........<b>↬</b> HEXcalc.html
-|..........<b>↬</b> HTML-Editor.html
-|..........<b>↳</b> firefox-bookmark.html
+|..................<b>↬</b> AiChat-list.html
+|..................<b>↬</b> AsmDisAsm.html
+|..................<b>↬</b> HEXcalc.html
+|..................<b>↬</b> HTML-Editor.html
+|..................<b>↳</b> firefox-bookmark.html
 l--->handCraft:
 |.............<b>↬</b> python:
 |.....................<b>↬</b> ncxRegView.py // CPUregVIEWER
