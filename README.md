@@ -2,6 +2,6 @@
 python Linux proc ASM (CrossPlatform) Shell Code...
 
 # FolderTree
-info-> LiBRAries -> python -> import -> psutil-AND-pydbg.html //install &example <br>
-    -> ShellHome -> TerminalHintz.html //programs &CMD <br>
-    -> TOOLs
+ i -> LiBRAries -> python -> import -> psutil-AND-pydbg.html //install &example <br>
+ n -> ShellHome -> TerminalHintz.html //programs &CMD <br>
+fo -> TOOLs
