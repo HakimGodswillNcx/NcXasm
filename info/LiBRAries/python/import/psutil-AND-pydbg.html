@@ -1,11 +1,31 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <title>cpuRegView.py</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+    <!-- Include the Python language CSS styles -->
     <style>
+        code.language-python {
+            color: #3572A5; /* Python keywords color */
+        }
+        code.language-python .token.comment,
+        code.language-python .token.comment .token {
+            color: #b57311; /* Python comments color */
+        }
+        code.language-python .token.string {
+            color: #30a030; /* Python strings color */
+        }
+        /* Add more CSS rules for other Python language elements if desired */
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
 </head>
-<body style="white-space: pre-wrap;">
-To achieve the combined functionality of getting the process name from user input, finding the PID, attaching python to the proc, 
-and then printing all CPU registers [value(s)], We'll use the pydbg library for attaching to the process and accessing the CPU register values, 
+<body>
+<p style="white-space: pre-wrap;">
+To achieve the combined functionality of getting the process name from user input,
+finding the PID, attaching python to the proc, 
+and then printing all CPU registers [value(s)],
+We'll use the pydbg library for attaching to the process and accessing the CPU register values, 
 AND psutil to translate name of process to [procID](Pid).
 
 1. First, make sure you have installed both psutil and pydbg libraries using:
@@ -13,8 +33,9 @@ AND psutil to translate name of process to [procID](Pid).
 pip install psutil
 pip install pydbg
 
-0. We are done, Now, let's create the Python Code to Run it: <code class="language-python3">
-
+0. We are done, Now, let's create the Python Code to Run it:
+</p>
+<pre><code class="language-python">
 import sys
 import psutil
 import pydbg
@@ -58,7 +79,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-</code>
+</code></pre>
 </body>
 </html>
