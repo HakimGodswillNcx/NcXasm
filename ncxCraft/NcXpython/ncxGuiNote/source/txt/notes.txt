@@ -1,0 +1,9 @@
+Notes::
+
+Locate the code section using:
+target: ld-linux.so.2
+NOTICE: the source code from cheathappens countains capstone!
+- binary parser from attached process to disassembler (non-PEfile)
+
+pyuic5 -x untitled.ui -o main.py
+pip3 install pyside2=5.15.2.1

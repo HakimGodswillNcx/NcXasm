@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>cpuRegView.py</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+    <!-- Include the Python language CSS styles -->
+    <style>
+        code.language-python {
+            color: #3572A5; /* Python keywords color */
+        }
+        code.language-python .token.comment,
+        code.language-python .token.comment .token {
+            color: #b57311; /* Python comments color */
+        }
+        code.language-python .token.string {
+            color: #30a030; /* Python strings color */
+        }
+        /* Add more CSS rules for other Python language elements if desired */
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-python.min.js"></script>
+</head>
+<body>
+<p style="white-space: pre-wrap;">
+To achieve the combined functionality of getting the process name from user input,
+finding the PID, attaching python to the proc, 
+and then printing all CPU registers [value(s)],
+We'll use the subprocess library for attaching to the process to GDB and accessing the CPU register values, 
+AND psutil to translate name of process to [procID](Pid).
+
+1. First, make sure you have installed both psutil and GDB using:
+
+pip install psutil
+sudo apt install gdb
+
+0. We are done, Now, let's create the Python Code to Run it:
+</p>
+<pre><code class="language-python">
+import sys
+import psutil
+import subprocess
+import time
+
+def print_registers(pid):
+    print("here is pid attached function success")
+    gdbCMD='-ex "set pagination off" -ex "info registers" -ex "detach" -ex "quit"'
+    gdb_command = f"sudo gdb -p {pid}"+' '+gdbCMD
+
+    try:
+        gdb_process = subprocess.Popen(gdb_command, shell=True)
+        time.sleep(1)  # Adjust the delay as needed
+
+        # Optionally, you can add more GDB commands here
+
+        gdb_process.wait()
+        gdb_output, _ = gdb_process.communicate()
+        print(gdb_output)  # This will print GDB's output
+
+    except subprocess.CalledProcessError as e:
+        print(f"Error while running GDB: {e}")
+def find_proc_by_name(proc_name):
+    for proc in psutil.process_iter(['pid', 'name']):
+        if proc_name.lower() in proc.info['name'].lower():
+            return proc.info['pid']
+    return None
+def get_all_process_names():
+    process_names = set()
+    for proc in psutil.process_iter(['name']):
+        process_names.add(proc.info['name'])
+    return process_names
+def main():
+    proc_name = input("Enter the [process_name]: ")
+    pid = find_proc_by_name(proc_name)
+
+    if pid is not None:
+        print(f"Process '{proc_name}' found with PID: {pid}")
+        try:
+            pid = int(input("Enter the PID of the process to inspect: "))
+            print("Attached to process with PID: {}".format(pid))
+            print_registers(pid)
+        except Exception as e:
+            print("Error attaching to process:", e)
+    else:
+        all_process_names = get_all_process_names()
+        sorted_process_names = sorted(all_process_names)
+        for name in sorted_process_names:
+            print(name)
+        print(f"No process with the name '{proc_name}' found.")
+
+if __name__ == "__main__":
+    main()
+    print("ncxRegView.py_exit")
+
+</code></pre>
+</body>
+</html>
