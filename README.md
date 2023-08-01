@@ -1,7 +1,7 @@
 # NcXasm
 python Linux proc ASM (CrossPlatform) Shell Code...
 
-# FolderTree
+# OLDFolderTree
 [info]: <br>↓<pre style="white-space: pre-wrap;">
 |--->LiBRAries -> python -> import -> psutil-AND-gdb.html //install &example
 |--->ShellHome -> TerminalHintz.html //programs listed &CMD
