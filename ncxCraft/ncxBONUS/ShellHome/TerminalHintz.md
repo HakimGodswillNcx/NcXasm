@@ -1,5 +1,4 @@
-<html>
-<body style="white-space: pre-wrap;">
+<pre style="white-space: pre-wrap;">
 
 HIT ncx FOR help!
 (home folder is /home/ncx 
@@ -57,5 +56,4 @@ Add a file /etc/sysctl.d/01-disable-aslr.conf containing:
 kernel.randomize_va_space = 0
 
   
-</body>
-</html>
+</pre>
