@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_custoMainWindow(object):
     def setupUi(self, custoMainWindow):
         custoMainWindow.setObjectName("custoMainWindow")
-        custoMainWindow.resize(972, 635)
+        custoMainWindow.resize(882, 704)
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(246, 245, 244))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -167,12 +167,17 @@ class Ui_custoMainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
         self.gridLayout.setObjectName("gridLayout")
+        #
+        #started with qpushbutton
+        #
         self.listBTN = QtWidgets.QPushButton(self.centralwidget)
         self.listBTN.setObjectName("listBTN")
         self.gridLayout.addWidget(self.listBTN, 1, 0, 1, 1)
-        self.regBTN = QtWidgets.QPushButton(self.centralwidget)
-        self.regBTN.setObjectName("regBTN")
-        self.gridLayout.addWidget(self.regBTN, 0, 6, 1, 1)
+        #
+        self.viewCpuBTN = QtWidgets.QPushButton(self.centralwidget)
+        self.viewCpuBTN.setObjectName("viewCpuBTN")
+        self.gridLayout.addWidget(self.viewCpuBTN, 0, 6, 1, 1)
+        #
         self.logoLabel = QtWidgets.QLabel(self.centralwidget)
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(255, 255, 255))
@@ -198,56 +203,68 @@ class Ui_custoMainWindow(object):
         self.gridLayout.addWidget(self.logoLabel, 9, 6, 1, 1)
         spacerItem = QtWidgets.QSpacerItem(20, 443, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         self.gridLayout.addItem(spacerItem, 1, 6, 2, 1)
+        #
         self.regTxT = QtWidgets.QTextBrowser(self.centralwidget)
         font = QtGui.QFont()
         font.setPointSize(15)
         self.regTxT.setFont(font)
         self.regTxT.setObjectName("regTxT")
         self.gridLayout.addWidget(self.regTxT, 0, 5, 10, 1)
+        #
         self.attachBTN = QtWidgets.QPushButton(self.centralwidget)
         self.attachBTN.setObjectName("attachBTN")
         self.gridLayout.addWidget(self.attachBTN, 0, 0, 1, 1)
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
+        #
+        self.procNameToConvert = QtWidgets.QLineEdit(self.centralwidget)
         font = QtGui.QFont()
         font.setPointSize(15)
-        self.lineEdit_2.setFont(font)
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.gridLayout.addWidget(self.lineEdit_2, 9, 0, 1, 4)
+        self.procNameToConvert.setFont(font)
+        self.procNameToConvert.setObjectName("procNameToConvert")
+        self.gridLayout.addWidget(self.procNameToConvert, 9, 0, 1, 4)
+        #
         self.convertBTN = QtWidgets.QPushButton(self.centralwidget)
         self.convertBTN.setObjectName("convertBTN")
         self.gridLayout.addWidget(self.convertBTN, 8, 2, 1, 1)
+        #
         self.chosenProcTxT = QtWidgets.QLineEdit(self.centralwidget)
         font = QtGui.QFont()
         font.setPointSize(15)
         self.chosenProcTxT.setFont(font)
         self.chosenProcTxT.setObjectName("chosenProcTxT")
         self.gridLayout.addWidget(self.chosenProcTxT, 0, 1, 1, 4)
+        #
         self.gitBTN = QtWidgets.QPushButton(self.centralwidget)
         self.gitBTN.setObjectName("gitBTN")
         self.gridLayout.addWidget(self.gitBTN, 8, 6, 1, 1)
+        #
         spacerItem1 = QtWidgets.QSpacerItem(83, 20, QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem1, 6, 0, 1, 1)
         spacerItem2 = QtWidgets.QSpacerItem(106, 20, QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem2, 7, 6, 1, 1)
         spacerItem3 = QtWidgets.QSpacerItem(50, 20, QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout.addItem(spacerItem3, 8, 4, 1, 1)
+        #
         self.hintzBTN = QtWidgets.QPushButton(self.centralwidget)
         self.hintzBTN.setObjectName("hintzBTN")
         self.gridLayout.addWidget(self.hintzBTN, 9, 4, 1, 1)
+        #
         spacerItem4 = QtWidgets.QSpacerItem(20, 395, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.gridLayout.addItem(spacerItem4, 2, 0, 4, 1)
-        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        #
+        self.procIDtoConvert = QtWidgets.QLineEdit(self.centralwidget)
         font = QtGui.QFont()
         font.setPointSize(15)
-        self.lineEdit.setFont(font)
-        self.lineEdit.setObjectName("lineEdit")
-        self.gridLayout.addWidget(self.lineEdit, 8, 0, 1, 2)
-        self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
+        self.procIDtoConvert.setFont(font)
+        self.procIDtoConvert.setObjectName("procIDtoConvert")
+        self.gridLayout.addWidget(self.procIDtoConvert, 8, 0, 1, 2)
+        #
+        self.procBrowser = QtWidgets.QTextBrowser(self.centralwidget)
         font = QtGui.QFont()
         font.setPointSize(15)
-        self.textBrowser.setFont(font)
-        self.textBrowser.setObjectName("textBrowser")
-        self.gridLayout.addWidget(self.textBrowser, 1, 1, 7, 4)
+        self.procBrowser.setFont(font)
+        self.procBrowser.setObjectName("procBrowser")
+        self.gridLayout.addWidget(self.procBrowser, 1, 1, 7, 4)
+        #
         custoMainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(custoMainWindow)
@@ -258,72 +275,82 @@ class Ui_custoMainWindow(object):
         custoMainWindow.setWindowTitle(_translate("custoMainWindow", "ncxRegView"))
         self.listBTN.setText(_translate("custoMainWindow", "show Proc\n"
 " list"))
-        self.regBTN.setText(_translate("custoMainWindow", "view CPU "))
+        self.viewCpuBTN.setText(_translate("custoMainWindow", "view CPU "))
         self.logoLabel.setText(_translate("custoMainWindow", "NcX RegViewier"))
-        self.regTxT.setHtml(_translate("custoMainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Ubuntu\'; font-size:15pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">rax            0xfffffffffffffe00  -512</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">rbx            0x555555af7a80      93824998144640</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">rcx            0x7ffff7d149cc      140737351076300</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">rdx            0x1000              4096</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">rsi            0x555555bbc9a0      93824998951328</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">rdi            0x0                 0</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">rbp            0x555555b5b7a0      0x555555b5b7a0</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">rsp            0x7fffffffd0d0      0x7fffffffd0d0</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">r8             0x0                 0</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">r9             0x0                 0</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">r10            0x0                 0</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">r11            0x246               582</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">r12            0x7ffff7e6df80      140737352490880</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">r13            0x1000              4096</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">r14            0x555555bbc9a0      93824998951328</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">r15            0x0                 0</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">rip            0x7ffff7d149cc      0x7ffff7d149cc &lt;__GI___libc_read+76&gt;</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">eflags         0x246               [ PF ZF IF ]</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">cs             0x33                51</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">ss             0x2b                43</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">ds             0x0                 0</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">es             0x0                 0</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">fs             0x0                 0</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">gs             0x0                 0</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Detaching from program: /usr/bin/python3.10, process 620086</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">[Inferior 1 (process 620086) detached] ((THIS IS AN EXAMPLE PREVIEW))</p></body></html>"))
+        self.regTxT.setHtml(_translate("custoMainWindow", """
+</head>
+<body style=' font-family:\'Ubuntu\'; font-size:15pt; font-weight:400; font-style:normal;\'>\n
+<pre style='white-space: pre-wrap;'>
+rax            0xfffffffffffffe00  -512
+rbx            0x555555b5ba50      93824998554192
+rcx            0x7ffff7cea45a      140737350902874
+rdx            0x0                 0
+rsi            0x7fffffffcd8c      140737488342412
+rdi            0x311b              12571
+rbp            0x555555b5ba50      0x555555b5ba50
+rsp            0x7fffffffcd78      0x7fffffffcd78
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x246               582
+r12            0x7fffffffcd8c      140737488342412
+r13            0x311b              12571
+r14            0x0                 0
+r15            0x555555ab32e0      93824997864160
+rip            0x7ffff7cea45a      0x7ffff7cea45a <__GI___wait4+26>
+eflags         0x246               [ PF ZF IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+Detaching from program: /usr/bin/python3.10, process 12570
+[Inferior 1 (process 12570) detached] ((THIS IS AN EXAMPLE PREVIEW))
+</pre>
+</body>
+</html>"""))
         self.attachBTN.setText(_translate("custoMainWindow", "attach proc"))
-        self.lineEdit_2.setText(_translate("custoMainWindow", "proc_NAME"))
+        self.procNameToConvert.setText(_translate("custoMainWindow", "proc_NAME"))
         self.convertBTN.setText(_translate("custoMainWindow", "convert"))
         self.chosenProcTxT.setText(_translate("custoMainWindow", "proc_ID |oR| Proc_NAME"))
         self.gitBTN.setText(_translate("custoMainWindow", "Git Bugs Repo"))
         self.hintzBTN.setText(_translate("custoMainWindow", "HINTz/help"))
-        self.lineEdit.setText(_translate("custoMainWindow", "proc_ID"))
-        self.textBrowser.setHtml(_translate("custoMainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Ubuntu\'; font-size:15pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">here we are showing values from:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\"> -psutil (proc list)</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\"> -Gnu (gdb)</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\"> -python3 (latest)</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\"> -qtpy5 (pip3 install)</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\"> -cpp.UI (from QtDesign)</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">((tested on linux ubuntu))</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">lisence and more info on:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\"> -HiNTz/help</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">BUGS -&gt; issues -&gt; github.com<br /> #[NcXasm]</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">(OPEN SOURCE code </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\"> Education Purpose) &amp;</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt;\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">SPECIAL THANKS QtCreator! </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">                2024-2025</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">[GUi]                                   </span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">@NcX.</span></p></body></html>"))
+        self.procIDtoConvert.setText(_translate("custoMainWindow", "proc_ID"))
+        self.procBrowser.setHtml(_translate("custoMainWindow", """
+</head><body style=' font-family:\'Ubuntu\'; font-size:15pt; font-weight:400; font-style:normal;\'>\n
+<p style='white-space: pre-wrap;'>
+here we are showing values from:
+ -psutil (proc list)
+ -Gnu (gdb)
+ -python3 (latest)
+ -qtpy5 (pip3 install)
+ -cpp.UI (from QtDesign)
+
+((tested on linux ubuntu))
+
+lisence and more info on:
+ -HiNTz/help
+BUGS -> issues -> github.com
+ #[NcXasm]
+
+(OPEN SOURCE code 
+ Education Purpose) &
 
 
+SPECIAL THANKS QtCreator! 
+                2024-2025
+[GUi]                                   
+@NcX.
+</p>
+</body>
+</html>"""))
+#
+#end of stup.ui
+#=======================================================================
+
+
+#start program==========================================================
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
