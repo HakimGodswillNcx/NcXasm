@@ -1,8 +1,4 @@
 <html>
-<head>
-    <style>
-    </style>
-</head>
 <body style="white-space: pre-wrap;">
 
 HIT ncx FOR help!
