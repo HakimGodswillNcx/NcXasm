@@ -5,13 +5,6 @@ target: ld-linux.so.2
 NOTICE: the source code from cheathappens countains capstone!
 - binary parser from attached process to disassembler (non-PEfile)
 
-pyuic5 -x untitled.ui -o main.py
-
 inline asm
 objdump -D inline.bin > inline.dump
 cat inline.dumb
-
-
-add to git/noteHelpTOO
-start+tab = switch windows
-start+D= desktop show
