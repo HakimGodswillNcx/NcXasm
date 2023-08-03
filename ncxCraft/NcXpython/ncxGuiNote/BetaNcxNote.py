@@ -67,7 +67,7 @@ start TAB= switch to app window<br>
 """
 
 lcdMsg="""LCD screen:<br>
-this is loop message,<br>
+to show custom memory values in a LOOP,<br>
 from supposed to be custom function !<br>
 <br>
 """
