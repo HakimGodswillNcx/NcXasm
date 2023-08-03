@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version= 1.0
+Icon= /home/ncx/iconz/ncxShootGui.ico.png
+Name= ncxShootGui
+Exec= /usr/bin/env python3 /home/ncx/Desktop/ncxRepo/NcXasm/ncxCraft/NcXpython/ncxMemo/Apps/ncxTrainer/ncxGamePy/ncxQtpy/ncxShootGui.py
+Terminal=false
+Type=Application
