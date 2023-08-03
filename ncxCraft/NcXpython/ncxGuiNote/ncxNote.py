@@ -51,7 +51,7 @@ alt  H = hide/show all msgs_labels. <br>
 ctrl F = full screen. <br>
 ctrl E = edit Note<br>
 ctrl S = save note<br>
-ctrl M = show memo only <br>
+ctrl M = show LCDmsg only (old MemoMsg) <br>
 ctrl L = show Logz only<br>
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: <br>
 ctrl NumPad = moving main label around.<br>
@@ -66,9 +66,9 @@ start TAB= switch to app window<br>
 <br>
 """
 
-memoMsg="""memo:<br>
-this is memo message,<br>
-from supposed to be function ?.<br>
+lcdMsg="""LCD screen:<br>
+this is loop message,<br>
+from supposed to be custom function !<br>
 <br>
 """
 
@@ -100,12 +100,12 @@ class CustomWindow(QMainWindow):
         painter.drawRect(self.rect())
 
     def hideAllMsgs(self): #hide and show ALL msgs:
-        global boolAllMsgs, memoMsg, noteMsg
+        global boolAllMsgs, lcdMsg, noteMsg
         global helpMsg, logzMsg, boolHelpOnly
 
         if boolAllMsgs==False:
             boolAllMsgs=True
-            coloredMemoMsg='<font color="yellow">'+memoMsg+'</font>'
+            coloredMemoMsg='<font color="yellow">'+lcdMsg+'</font>'
             prefixWrapMsgs = "<font color='white' style='white-space: pre-wrap;'>"
             coloredNoteMsg=prefixWrapMsgs+noteMsg+"<br>"+"</font>"
             coloredLogzMsg='<font color="red">'+logzMsg+'</font>'
@@ -132,8 +132,8 @@ class CustomWindow(QMainWindow):
         mainLabel.setText(coloredlogzMsg)
         mainLabel.move(0, 0)
     def showMemoOnly(self):
-        global memoMsg
-        coloredMemoMsg='<font color="yellow">'+memoMsg+'</font>'
+        global lcdMsg
+        coloredMemoMsg='<font color="yellow">'+lcdMsg+'</font>'
         mainLabel.setText(coloredMemoMsg)
         mainLabel.move(0, 0)
 
