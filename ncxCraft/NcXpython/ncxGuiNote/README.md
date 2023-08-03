@@ -9,5 +9,7 @@
     Assign your shortcut key combination by selecting the shortcut and pressing the combination,
     you desire (e.g. Ctrl+start+n).
     
-WARNING: The command name that you type should be a valid system command. You can check that the command works by opening a Terminal and typing it in there. The command that opens an application cannot have the same name as the application itself.
+WARNING: The command name that you type should be a valid system command. 
+You can check that the command works by opening a Terminal and typing it in there. 
+The command that opens an application cannot have the same name as the application itself.
 <pre>
