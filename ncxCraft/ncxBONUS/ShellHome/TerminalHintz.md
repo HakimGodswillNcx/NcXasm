@@ -6,7 +6,7 @@ MESSAGE from .bashrc)
 
 [PROGRAMS LIST]
 GameConqueror: GUI memory scan
-cheathappens: GUI capstone disasm ((cosmos))
+cheathappens: GUI capstone disasm
 execution-trace-viewer : GUI (trace)
 xPEviewer/xELFviewer : GUI PE/ELF file view
 sudo cat /proc/procID/maps
@@ -16,6 +16,8 @@ git clone <link>
 nano ncx (example) edit text in terminal
 subl ncx (example) edit in GUI sublime text
 
+objdump -D inline.bin > inline.dump
+cat inline.dumb
 cat ~/ncx (example) will echo text in terminal
 find */prefs.py ((to find file in current dir of all subdirs))
 sudo visudo ((ncx ALL = NOPASSWD: /usr/bin/gdb)) at end of file
@@ -54,6 +56,7 @@ to ENABLE: echo 2 | sudo tee /proc/sys/kernel/randomize_va_space
 This won't survive a reboot, so you'll have to configure this in sysctl. 
 Add a file /etc/sysctl.d/01-disable-aslr.conf containing:
 kernel.randomize_va_space = 0
+
 
   
 </pre>
