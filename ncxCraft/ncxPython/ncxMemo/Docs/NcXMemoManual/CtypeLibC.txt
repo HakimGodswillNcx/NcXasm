@@ -1,1 +1,0 @@
-To execute multiline assembly code in another process from Python, you can use the ctypes library to interact with the libc library functions on Linux. This method involves creating a shellcode with the desired assembly instructions and then injecting and executing that shellcode in the target process using ctypes to call mmap and memcpy. 
