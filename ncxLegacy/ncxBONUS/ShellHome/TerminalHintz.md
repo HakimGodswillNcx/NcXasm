@@ -1,5 +1,3 @@
-<pre style="white-space: pre-wrap;">
-
 HIT ncx FOR help!
 (home folder is /home/ncx 
 MESSAGE from .bashrc)
@@ -20,6 +18,7 @@ objdump -D inline.bin > inline.dump
 cat inline.dumb
 cat ~/ncx (example) will echo text in terminal
 find */prefs.py ((to find file in current dir of all subdirs))
+sudo find / -name libthread_db.so.0
 sudo visudo ((ncx ALL = NOPASSWD: /usr/bin/gdb)) at end of file
 
 qtcreator
@@ -56,7 +55,3 @@ to ENABLE: echo 2 | sudo tee /proc/sys/kernel/randomize_va_space
 This won't survive a reboot, so you'll have to configure this in sysctl. 
 Add a file /etc/sysctl.d/01-disable-aslr.conf containing:
 kernel.randomize_va_space = 0
-
-
-  
-</pre>
