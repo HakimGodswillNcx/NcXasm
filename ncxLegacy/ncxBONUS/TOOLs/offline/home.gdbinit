@@ -19,5 +19,6 @@ document init-gef
 Initializes GEF (GDB Enhanced Features)
 end
 
-
-
+set auto-load safe-path /
+set solib-search-path /usr/lib/x86_64-linux-gnu/
+set libthread-db-search-path /usr/lib/x86_64-linux-gnu
