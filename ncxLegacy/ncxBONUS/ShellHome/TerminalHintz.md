@@ -48,6 +48,13 @@ pip3 install packageName (for pyton3)
 pip uninstall packagename
 sudo apt remove qtcreator
 
+[gdb]
+_
+sudo gdb -p 137998 -ex 'set pagination off' -ex 'tui enable' -ex 'layout split' -ex 'info registers' -ex continue
+sudo gdb -p 137998 -ex 'set pagination off' -ex 'info registers' -ex detach -ex quit
+sudo gdb -p 137998 -ex 'set pagination off' -ex 'info registers' -ex c
+_
+
 [kernel]ASLR:
 cat /proc/sys/kernel/randomize_va_space
 to DESABLE: echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
