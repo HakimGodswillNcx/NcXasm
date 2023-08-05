@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version= 1.0
+Icon= /home/ncx/Desktop/ncxRepo/NcXasm/ncxCraft/ncxMemo/source/iconz/ico.png
+Name= ncxReGuiView
+Exec= /usr/bin/env python3 /home/ncx/Desktop/ncxRepo/NcXasm/ncxCraft/ncxMemo/ncxReGui-View.py
+Terminal=false
+Type=Application
