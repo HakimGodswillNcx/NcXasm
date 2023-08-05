@@ -45,14 +45,17 @@ class GdbWorker(QThread):
                 regexPattern = r"(?s).*rax(.*?)$" #deletes everything before 'rax' including rax.
                 regexed_parts = re.split(regexPattern, gdb_output, maxsplit=1)
                 regexed_gdb = ''.join(regexed_parts[:-1])
-                gdb_process.stdout.close()
+                prefix_gdbRegex="rax"
+                if regexed_gdb=="": #if its not rax then it is eax (x86_64/32bit) regex regName
+                    regexPattern = r"(?s).*eax(.*?)$" #deletes everything before 'rax' including rax.
+                    regexed_parts = re.split(regexPattern, gdb_output, maxsplit=1)
+                    regexed_gdb = ''.join(regexed_parts[:-1])
+                    prefix_gdbRegex="eax" #prefexing for 32bit (vs x86_64) register names
                 app.processEvents()
-                #regTxT.setText(f"rax {regexed_gdb}")  # This will print GDB's output
-                self.output_ready.emit(f"rax {regexed_gdb}") #replaced .setText with that line
-                print("slow target_trainer bug here,we add sleep still not fixed it")
-                time.sleep(0.1) #desperately giving 1 second for trainer to move
-                gdb_process.wait() #catching trainer movement after gdb was sleeping
-                print("after wait")
+                self.output_ready.emit(f"{prefix_gdbRegex} {regexed_gdb}") #replaced .setText with that line
+                #slow target_trainer bug here, seems gdb doesnt work without breakpoint!
+                time.sleep(0.1) #desperately giving 1 milisecond for target_proc to move (proc_wait)
+                #wait... go... (inside LOOP)
 
         except subprocess.CalledProcessError as e:
             regTxT.setText(f"Failed Popen !GDB: {e}")
