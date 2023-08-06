@@ -1,0 +1,22 @@
+hexdump linux commands:
+-----------------------
+file
+____
+binutils
+_______
+hexdump
+hexdump -b test.txt 
+0000000 163 160 145 143 151 146 171
+hexdump -c test.txt 
+0000000   s   p   e   c   i   f   y
+hexdump -C test.txt 
+00000000  73 70 65 63 69 66 79 20 |specify a file t|
+hexdump -o test.txt 
+0000000  070163  061545  063151  020171  020141
+hexdump -n 30 -C test.txt 
+00000000  73 70 65 63 69 66 79 20  |specify a file t|
+0000001e only show 30 bytes
+hexdump -s 30 -C test.txt 
+0000001e  6e 65 20 6f 72 20 6d 6f |ne or more newli|
+0000002e skip 30 byte and show the rest of data
+_______________________________________________
