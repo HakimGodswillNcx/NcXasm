@@ -48,6 +48,7 @@ pip3 install packageName (for pyton3)
 pip uninstall packagename
 sudo apt remove qtcreator
 
+sudo apt install strace
 python3 -m pip install distorm3
 [gdb] python-ptrace pip3 install python-ptrace
 _
