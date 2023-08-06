@@ -1,10 +1,21 @@
+#gdb shell ls (runs shell cmd from gdb)
+<br>
 <pre style="white-space: pre-wrap;"> #python interpreter
 (gdb) python
 > code here (in multi lines)
 >end
 :: notice end to execute the script
-</pre>
-<pre style="white-space: pre-wrap;"> #python interpreter 2
+</pre> <pre style="white-space: pre-wrap;">
+(gdb) python help(gdb)
+(gdb) python help(gdb.breakpoint)
+
+(gdb) python gdb.execute('next')
+(gdb) python bp = gdb.Breakpoint('hello.c:9')
+(gdb) python bp.enabled = False
+
+(gdb) python var_i = gdb.parse.and.eval('i')
+but that var is not auto sync mustbe inscript
+</pre> <pre style="white-space: pre-wrap;"> #python interpreter 2
 (gdb) python print(gdb.breakpoints())
 :: it is inline python (single line mode)
 </pre>
