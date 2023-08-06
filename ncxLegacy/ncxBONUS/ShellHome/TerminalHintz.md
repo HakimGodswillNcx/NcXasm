@@ -48,7 +48,8 @@ pip3 install packageName (for pyton3)
 pip uninstall packagename
 sudo apt remove qtcreator
 
-[gdb]
+python3 -m pip install distorm3
+[gdb] python-ptrace pip3 install python-ptrace
 _
 sudo gdb -p 137998 -ex 'set pagination off' -ex 'tui enable' -ex 'layout split' -ex 'info registers' -ex continue
 sudo gdb -p 137998 -ex 'set pagination off' -ex 'info registers' -ex detach -ex quit
