@@ -1,91 +1,83 @@
+<pre style="white-space: pre-wrap;">
+(gdb) set disassembly-flavor intel
+
+sudo cat /proc/1700388/maps
+______
+sudo gdb -p 1702907 -ex 'set pagination off' -ex 'info registers'
+________
+gcc -o ncxC  ncxTreadNoinput.c -g 
+__________
+(gdb) show architecture
+
 #gdb shell ls (runs shell cmd from gdb)
+</pre>
 <br>
+
 <pre style="white-space: pre-wrap;"> #python interpreter
+
 (gdb) python
 > code here (in multi lines)
 >end
 :: notice end to execute the script
-</pre> <pre style="white-space: pre-wrap;">
-(gdb) python help(gdb)
-(gdb) python help(gdb.breakpoint)
+
+<br>
 
 (gdb) python gdb.execute('next')
 (gdb) python bp = gdb.Breakpoint('hello.c:9')
 (gdb) python bp.enabled = False
-
-(gdb) python var_i = gdb.parse.and.eval('i')
-but that var is not auto sync mustbe inscript
-</pre> <pre style="white-space: pre-wrap;"> #python interpreter 2
 (gdb) python print(gdb.breakpoints())
-:: it is inline python (single line mode)
 </pre>
+
 <pre style="white-space: pre-wrap;"> #commands
-gdb -q ./helloworld -tui
-(gdb) set disassembly-flavor intel
-(gdb) break _start
-(gdb) run
+r (gdb) run
+
+b(gdb) break (by adress)
+i b or info breakpoints (show all breakpoints adres)
+d(gdb) delete (by id) destroy all breakpoints!
+
+(gdb) list
 (gdb) layout asm
 (gdb) layout regs
 
-step back before breakpoint (gdb) reverse-stepi
-step by step after breakpoint (gdb) stepi
-step into asm instruction (gdb) nexti
-</pre>
-<pre style="white-space: pre-wrap;">
-#variables:
-target record-full (this should be done before going backwards) after breakpoint
-rn or reverse-next
-rs or reverst-step
-
-p or print (look SCENARIO) stack_pointer as variable (gdb) print $sp
-info locals (show local variables inside function)
-info args   (show arguments variables func(args))
-w or watch (look scenario) (gdb) watch (long**) x7ffff548
-display (var) same as watch? (youcan push next and see where var changed)
-undisplay (var by id number line) stop display (destroy)
-bt or backtrace (show all relative functions before that did affect current)
-finish (finish function call and stop to see steps until end of function)
-what or whatis (varname) show the type of variable (int, char, ect)
-</pre>
-<pre style="white-space: pre-wrap;">
-b or break (used on main/start) break main
-d or delete (used after breakpoints) destroy breakpoints and deletes them by id number
+(gdb) reverse-stepi
+(gdb) reverse-nexti
+si(gdb) stepi (step in asm instruction)
+ni(gdb) nexti (next asm without steping)
+n(gdb) next (next line) without steping into functions
+s(gdb) step (steps inside functions)
+rn(gdb)reverse-next
+rs(gdb)reverst-step
 
 up -> to go to the function called the current
-r or run are samething (start/restart)
-continue backwards (gdb) reverse-continue
-c or continue (run until next breakpoint)
+c (gdb)continue (run until next breakpoint)
 down-> to go to next function called by current
 
-i b or info breakpoints (show all breakpoints adres)
-info registers (info have lotof suboptions) here we show registers
-set var x=15 (set have lot of subprocess too) here we make var equal 15 (edit var)
+rc(gdb) reverse-continue
+bt(gdb) backtrace
+finish (finish function call and stop to see steps until end of function)
 
-n or next (next line) without steping into functions
-s or step (almost same as n/next) but steps inside functions
+w(gdb) watch (long**) 0x7ffff548
+display (var) same as watch? (youcan push next and see where var changed)
+undisplay (var by id number line) stop display (destroy)
+
+(gdb) print $rip
+(gdb) print *0x000deadbeef
+set var x=15 (set have lot of subprocess too)
+x/i $pc
+x/20i *0x000deadbeef
+x/x *$rip
+x/10x $rbp+0x1
+
+info locals (show local variables inside function)
+info args   (show arguments variables func(args))
+info variables
+info registers (info have lotof suboptions) here we show registers
+
+what or whatis (varname) show the type of variable (int, char, ect)
 </pre>
-<pre style="white-space: pre-wrap;"> #SCENARIO:
-with the -g compiled software we can break at source code lines by number (gdb) break 9
-	must set the breakpoint for gdb: (at line 9): example
-		run binary as a proc (gdb) run
-	         in the current line:
-		        (gdb) print varName
-varname is name of the memory adress and print will print current value of the variable
-</pre>
-<pre style="white-space: pre-wrap;"> #SCENARIO:
-with the -g compiled software we can break at source code lines by number (gdb) break 9
-	must set the breakpoint for gdb: (at line 9): example
-		will auto_break after variable value changes (gdb) continue
-	         in the current line: (gdb printing variable value changes)
-		        (gdb) continue
-</pre>
+
 <pre style="white-space: pre-wrap;"> #BONUS
-g++ -g hello.cpp -o hello
-gdb -tui ./hello
-(gdb) layout next
 refresh (gdb) ref
-show sourceCode (gdb) list
-examine inline asm (gdb) x/i $pc
 show floats general registers (gdb) tui reg floats
 </pre>
 <pre style="white-space: pre-wrap;">
