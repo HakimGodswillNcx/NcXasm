@@ -63,6 +63,7 @@ undisplay (var by id number line) stop display (destroy)
 (gdb) print $rip
 (gdb) print *0x000deadbeef
 set var x=15 (set have lot of subprocess too)
+disas main
 x/i $pc
 x/20i *0x000deadbeef
 x/x *$rip
@@ -72,6 +73,7 @@ info locals (show local variables inside function)
 info args   (show arguments variables func(args))
 info variables
 info registers (info have lotof suboptions) here we show registers
+info func
 
 what or whatis (varname) show the type of variable (int, char, ect)
 </pre>
