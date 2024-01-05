@@ -60,7 +60,12 @@ _
 [kernel]ASLR:
 cat /proc/sys/kernel/randomize_va_space
 to DESABLE: echo 0 | sudo tee /proc/sys/kernel/randomize_va_space
+^
 to ENABLE: echo 2 | sudo tee /proc/sys/kernel/randomize_va_space
 This won't survive a reboot, so you'll have to configure this in sysctl. 
 Add a file /etc/sysctl.d/01-disable-aslr.conf containing:
 kernel.randomize_va_space = 0
+for that we do thus final line # and at the end we refresh sysctl -p # :
+v
+sudo echo "kernel.randomize_va_space = 0" | sudo tee /etc/sysctl.d/01-disable-aslr.conf && sudo sysctl -p
+
